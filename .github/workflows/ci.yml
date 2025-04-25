@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: "1.22.x"
+        
+    - name: Install dependencies
+      run: go mod download
+      
+    - name: Run tests
+      run: make test
+      
+    - name: Run benchmarks
+      run: make bench
+
+    - name: Check coverage
+      run: |
+        go tool cover -func=coverage.out | grep total | awk '{print $3}' | \
+        awk -F'%' '$1 < 90 { exit 1 }'
