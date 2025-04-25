@@ -11,6 +11,29 @@ Uma implementação eficiente do cálculo da Distância de Manhattan entre dois 
 go get github.com/phlucasfr/manhattan-distance
 ```
 
+## 💻 Execução Local
+O projeto pode ser executado diretamente em seu ambiente Go com os seguintes comandos:
+```
+# Executar o programa principal
+make run
+
+# Alternativamente, pode rodar manualmente:
+go run ./examples/main.go
+```
+
+## 🐳 Execução via Docker
+O projeto pode ser executado em containers Docker para facilitar o desenvolvimento e testes:
+```
+# Construir a imagem e iniciar os containers
+make up_build
+
+# Parar e remover os containers
+make down
+
+# Acessar o container (se necessário)
+docker exec -it manhattan-app /bin/sh
+```
+
 ## 🚀 Como Usar
 ```bash
 package main
@@ -36,11 +59,15 @@ func main() {
 - Deve ser retangular (todas as linhas com o mesmo comprimento).
 
 ## 🔧 Comandos Úteis
-| Comando      | Descrição                                      |
-|--------------|------------------------------------------------|
-| `make run`   | Executa o exemplo principal                    |
-| `make test`  | Roda testes unitários com cobertura            |
-| `make bench` | Executa benchmarks de performance              |
+| Comando         | Descrição                                      |
+|-----------------|------------------------------------------------|
+| `make run`      | Executa o exemplo principal                    |
+| `make test`     | Roda testes unitários com cobertura            |
+| `make bench`    | Executa benchmarks de performance              |
+| `make build`    | Builda o binário do manhattan                  |
+| `make up`       | Inicia os containers Docker                    |
+| `make down`     | Para e remove os containers Docker             |
+| `make up_build` | Builda o binário e inicia os containers Docker |
 
 ## ✅ Testes
 
@@ -80,10 +107,15 @@ O projeto utiliza GitHub Actions para:
   Foram incluídos benchmarks para cenários de caso médio e pior caso (matriz 100×100), validando a eficiência e estabilidade da função em situações realistas.
 
 - **Uso de `Makefile`**:  
-  Centralizamos os comandos de run, testes e benchmarks em um `Makefile` para facilitar a execução e padronizar o uso do projeto.
+  Centralizamos os comandos em um `Makefile` para facilitar a execução e padronizar o uso do projeto.
 
 - **CI com GitHub Actions**:  
   O pipeline automatizado roda testes, benchmarks e valida a cobertura mínima de 90%, garantindo qualidade contínua nas entregas.
+
+- **Containerização com Docker**:  
+  Implementei a integração com Docker para demonstrar capacidade de criar ambientes isolados e reproduzíveis, seguindo práticas modernas de DevOps.
+
+
 
 
  
