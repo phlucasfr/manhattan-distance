@@ -24,9 +24,11 @@ func BenchmarkManhattanDistanceWorstCase(b *testing.B) {
 
 func BenchmarkManhattanDistanceAverageCase(b *testing.B) {
 	matrix := [][]int{
-		{0, 0, 0, 1, 0},
-		{0, 1, 0, 0, 0},
 		{0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0},
+		{0, 0, 0, 0, 0},
+		{0, 0, 0, 1, 0},
+		{0, 0, 0, 0, 1},
 	}
 
 	b.ResetTimer()

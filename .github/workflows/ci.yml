@@ -30,3 +30,7 @@ jobs:
       run: |
         go tool cover -func=coverage.out | grep total | awk '{print $3}' | \
         awk -F'%' '$1 < 90 { exit 1 }'
+
+    - name: Check benchmark results
+      run: |
+        awk '$1 ~ /-8$/ && $3 > 1000 { print "Too slow: "$1; exit 1 }' benchmark.txt

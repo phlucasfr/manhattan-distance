@@ -10,7 +10,7 @@ test:
 
 bench:
 	@echo "Running test bench..."
-	go test -bench=. -benchmem ./manhattan
+	go test -bench=. -benchmem ./manhattan > benchmark.txt
 	@echo "Test bench completed."
 
 build:
