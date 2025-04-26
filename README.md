@@ -82,6 +82,8 @@ O projeto utiliza GitHub Actions para:
 
 1. **Executar testes** em push e pull requests  
 2. **Verificar cobertura** de código (mínimo 90%)
+3. **Verificar performance** de código (mínimo 1000 ns/op)
+
 
 ## ✨ Destaques
 
