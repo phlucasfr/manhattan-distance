@@ -29,9 +29,6 @@ make up_build
 
 # Parar e remover os containers
 make down
-
-# Acessar o container (se necessário)
-docker exec -it manhattan-app /bin/sh
 ```
 
 ## 🚀 Como Usar
