@@ -10,6 +10,12 @@ Uma implementação eficiente do cálculo da Distância de Manhattan entre dois 
 ```bash
 go get github.com/phlucasfr/manhattan-distance
 ```
+```bash
+# Importante!
+# Como estamos usando o Go Modules como gerenciador de dependências,
+# talvez seja necessário exportar a variável de ambiente antes de executar o projeto.
+export GO111MODULE=on
+```
 
 ## 💻 Execução Local
 O projeto pode ser executado diretamente em seu ambiente Go com os seguintes comandos:
