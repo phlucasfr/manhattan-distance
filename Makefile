@@ -5,7 +5,7 @@ run:
 
 test:
 	@echo "Running tests..."
-	go test -v -cover -coverprofile=coverage.out ./manhattan 
+	go test -v -cover -coverprofile=coverage.out ./manhattan ./utils 
 	@echo "Tests completed."
 
 bench:
@@ -32,4 +32,4 @@ down:
 up_build: build up
 	@echo "Building manhattan binary and starting Docker images..."
 
-phony: run test bench build up down up_build 
+.phony: run test bench build up down up_build 
